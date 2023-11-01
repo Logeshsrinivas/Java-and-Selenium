@@ -1,0 +1,20 @@
+package com.LogeshOops;
+/**
+ * Application to design Products and its types 
+ * @author Logesh
+ * @since 0.1
+ */
+
+public class TestProduct {
+
+	public static void main(String[] args) {
+		
+		ClothingProduct c = new ClothingProduct(301,"T-Shirt",25.0,"M", "Cotton"); // Creating a object and initializing for Clothing Product
+		ElectronicProduct e = new ElectronicProduct(201,"Laptop", 1200.0, 12); // Creating a object and initializing for Electronic Product
+		
+		c.displayInfo(); // Calling DisplayInfo method
+		e.displayInfo(); // Calling DisplayInfo method
+
+	}
+
+}

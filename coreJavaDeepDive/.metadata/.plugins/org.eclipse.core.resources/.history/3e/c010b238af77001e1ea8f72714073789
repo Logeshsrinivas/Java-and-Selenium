@@ -1,0 +1,15 @@
+package com.TestNGASSESSMENT.Test.TestNG;
+
+import org.testng.annotations.Test;
+
+public class RegisterTest extends BaseTest {
+	
+	RegisterPage registerPage;
+	
+	
+	@Test(dataProvider = "data", dataProviderClass = DataGiver.class)
+	public void register() {
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.TestNGASSESSMENT.Test.TestNG;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.BeforeClass;
+
+public class BaseTest {
+	
+	public static WebDriver driver;
+	
+	@BeforeClass
+	public void setUp() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+	}
+
+}

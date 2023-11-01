@@ -1,0 +1,30 @@
+package com.TestNGASSESSMENT.Test.TestNG;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class RegisterPage {
+	WebDriver driver;
+	
+	@FindBy(xpath="//a[text()='Register']")
+	WebElement register;
+	
+	@FindBy(xpath="//input[@id='gender-male']")
+	WebElement gender;
+	
+	@FindBy()
+	WebElement firstName;
+	
+	@FindBy()
+	WebElement lastName;
+	
+	@FindBy()
+	WebElement eMail;
+	
+	@FindBy()
+	WebElement passWord;
+	
+	@FindBy()
+	WebElement cPassWord;
+}

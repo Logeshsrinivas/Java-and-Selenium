@@ -1,0 +1,14 @@
+package TravelGuru;
+
+import org.testng.annotations.Test;
+
+public class RegisterTest extends BaseTest {
+	RegisterPage registerPage;
+	
+	
+	@Test
+	public void Test1() {
+		
+	}
+
+}

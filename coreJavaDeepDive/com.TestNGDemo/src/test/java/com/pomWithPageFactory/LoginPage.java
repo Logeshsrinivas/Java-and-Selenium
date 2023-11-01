@@ -1,0 +1,54 @@
+package com.pomWithPageFactory;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPage {
+	WebDriver driver;
+	
+	@FindBy(name="username")
+	WebElement userName;
+	@FindBy(name="password")
+	WebElement passWord;
+	@FindBy(xpath="//h5[text()='Login']")
+	WebElement titleText;
+	@FindBy(xpath="//button[@type='submit']")
+	WebElement login;
+
+	
+	public LoginPage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+//	Set user name in textbox
+	public void setUserName(String strUserName) {
+		userName.sendKeys(strUserName);
+		
+	}
+//	Set Password in textbox
+	public void setpassword(String strPassWord) {
+		passWord.sendKeys(strPassWord);
+		
+	}
+//	click login button
+	public void clickLogin() {
+		login.click();
+	}
+//	Get text of the particular element
+	public String getLoginTitle() {
+		return titleText.getText();
+	}
+	public void login(String use, String pass) {
+		// calling username setter method
+		setUserName(use);
+		// calling password setter method
+		setpassword(pass);
+		// calling login method
+		clickLogin();
+	}
+	
+}

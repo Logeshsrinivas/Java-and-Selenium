@@ -1,0 +1,15 @@
+package TestNG.com.TestNGDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class paramters {
+	public WebDriver driver;
+	By username = By.name("username");
+	By password = By.name("password");
+	By loginbt = By.xpath("//button[text()=' Login ']");
+	By loginTitle = By.xpath("//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']");
+	By errorMessage = By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']");
+
+
+}

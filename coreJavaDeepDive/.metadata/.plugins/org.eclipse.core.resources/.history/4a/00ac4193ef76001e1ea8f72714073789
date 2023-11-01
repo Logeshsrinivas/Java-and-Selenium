@@ -1,0 +1,7 @@
+package com.sauceDemo;
+
+import org.testng.annotations.DataProvider;
+
+public class DataGiver {
+	@DataProvider
+}

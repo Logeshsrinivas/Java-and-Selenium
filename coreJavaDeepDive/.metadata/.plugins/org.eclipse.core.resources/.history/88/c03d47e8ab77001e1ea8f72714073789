@@ -1,0 +1,5 @@
+package com.TestNGASSESSMENT.Test.TestNG;
+
+public class BaseTest {
+
+}

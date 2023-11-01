@@ -1,0 +1,35 @@
+package com.assignment1;
+
+public class Employee {
+	String id;
+	String name;
+	int sal=0;
+	
+	public int calculateMonthlySalary(int sal) {
+		System.out.println("Employee monthly Salary is : "+sal);
+		return sal*12;
+	}
+	public int calculateDailySalary(int sal,int noOfDays) {
+		System.out.println("Employee Yearly Salary is : "+sal);
+		return sal*noOfDays;
+	}
+	public double calculateHourlySalary(int sal,double noOfHours) {
+		System.out.println("Employee hourly Salary is : "+sal);
+		return sal*(noOfHours*251);
+	}
+	public String toString() {
+		return "Employee Name : " + name + "\n"+
+				"Employee Id : " + id + "\n" + 
+				"Employee Salary : " + sal ;
+	}
+	
+	public static void main(String[] args) {
+		
+		Employee e = new Employee();
+		System.out.println("The Yearly salary based on Montly salary : "+e.calculateMonthlySalary(27000));
+		System.out.println("The Yearly salary based on Daily salary : "+e.calculateDailySalary(900, ));
+		System.out.println("The Yearly salary based on Hourly salary : "+e.calculateHourlySalary(110, 7.50));
+	
+	}
+
+}

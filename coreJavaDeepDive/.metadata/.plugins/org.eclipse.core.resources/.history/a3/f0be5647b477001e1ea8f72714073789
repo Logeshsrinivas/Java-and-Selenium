@@ -1,0 +1,24 @@
+package com.TestNGASSESSMENT.Test.TestNG;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class LoginPage {
+
+	WebDriver driver;
+	
+	@FindBy(xpath="//a[text()='Log in']")
+	WebElement logInPage;
+	
+	@FindBy(id="Email")
+	WebElement eMail;
+	
+	@FindBy(id="Password")
+	WebElement password;
+	
+	@FindBy(xpath="//input[@class='button-1 login-button']")
+	WebElement loginbut;
+	
+	
+}

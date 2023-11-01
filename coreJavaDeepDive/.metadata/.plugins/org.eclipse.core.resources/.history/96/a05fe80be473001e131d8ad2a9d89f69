@@ -1,0 +1,34 @@
+package TestNG.com.TestNGDemo;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.DataProvider;
+
+public class ExternalDataProviderXL {
+	
+	@DataProvider(name="supplier")
+	public Object[][] dataSupplier(){
+		
+		String excelFilePath = System.getProperty("user.dir")+"";
+				File excelFile= new File(excelFilePath);
+				FileInputStream fis =null;
+				
+				try {
+					fis = new FileInputStream(excelFile);
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				}
+				
+				XSSFWorkbook workBook  = null;
+				try {
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+	}
+
+}

@@ -1,0 +1,67 @@
+package TestNG.com.TestNGDemo;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+
+
+
+public class paramters {
+	public WebDriver driver;
+	By username = By.name("username");
+	By password = By.name("password");
+	By loginbt = By.xpath("//button[text()=' Login ']");
+	By loginTitle = By.xpath("//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']");
+	By errorMessage = By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']");
+	
+	@BeforeTest
+	@Parameters("browser")
+	public void launch(String browser) {
+		if(browser.equalsIgnoreCase("firefox")) {
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments("--start-maximized");
+			driver = new FirefoxDriver(options);
+			System.out.println("Browser Started :" + browser );
+		}else if(browser.equalsIgnoreCase("chrome")) {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--start-maximized");
+			driver = new ChromeDriver(options);
+			System.out.println("Browser Started :" + browser );
+		}
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+	}
+	
+	@Test
+	@Parameters({"val1","val2"})
+	public void validCredentials(String s1, String s2) {
+		driver.findElement(username).sendKeys(s1);
+		driver.findElement(password).sendKeys(s2);
+		driver.findElement(loginbt).click();
+		System.out.println("Acutal Title :" + driver.findElement(loginTitle).getText());
+		Assert.assertEquals((driver.findElement(loginTitle)).getText(), "Dashboard");
+	}
+	
+	@Test
+	@Parameters({"val3","val4"})
+	public void InvalidCredentials(String s1, String s2) {
+		driver.findElement(username).sendKeys("1234");
+		driver.findElement(password).sendKeys("admin3456");
+		driver.findElement(loginbt).click();
+		System.out.println("Acutal ErrorMessage :" + driver.findElement(errorMessage).getText());
+		Assert.assertEquals((driver.findElement(errorMessage)).getText(), "Invalid credentials");
+	}
+
+
+}

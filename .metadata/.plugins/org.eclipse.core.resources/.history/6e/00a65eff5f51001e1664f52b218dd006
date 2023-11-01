@@ -1,0 +1,19 @@
+package com.assignment1;
+
+public class Employee {
+	String id;
+	String name;
+	int sal;
+	
+	public int calculateYearlySalary(int sal) {
+		return sal*12;
+	}
+	public int calculateYearlySalary(int sal,int noOfDays) {
+		return sal*251;
+	}
+	public double calculateYearlySalary(int sal,double noOfHours) {
+		return sal*noOfHours*251;
+		
+	}
+
+}

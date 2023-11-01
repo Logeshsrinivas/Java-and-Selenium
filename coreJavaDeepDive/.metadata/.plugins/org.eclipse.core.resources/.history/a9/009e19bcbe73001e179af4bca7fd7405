@@ -1,0 +1,16 @@
+package TestNG.com.TestNGDemo;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.DataProvider;
+
+public class DataProvider {
+	
+	WebDriver driver;
+	
+	@DataProvider(name="testData")
+	public Object[][] dataProvFunc(){
+		return new Object[][] {{"java"},{"Testing"}};
+	}
+	
+
+}

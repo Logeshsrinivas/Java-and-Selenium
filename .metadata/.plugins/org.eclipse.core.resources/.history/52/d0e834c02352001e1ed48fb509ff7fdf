@@ -1,0 +1,18 @@
+package com.LogeshOops;
+/**
+* Application to calculate employee salary based on percentage and bonus
+* @author Logesh
+* @since 0.1
+*/
+public class EmployeeDriver {
+
+	public static void main(String[] args) {
+		Employee e = new Employee(121,"Logesh","ASE", 27000);// Creating and initializing object of Employee
+		e.displayInfo();// calling displyaInfo method
+		e.increaseSalary(50); // Passing percentage in increaseSalary method
+		e.increaseSsalary(42, 15);  // Passing percentage ND bONUS in increaseSalary method
+		
+
+	}
+
+}

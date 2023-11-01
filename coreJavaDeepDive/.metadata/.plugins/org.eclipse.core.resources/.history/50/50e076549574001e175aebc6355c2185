@@ -1,0 +1,21 @@
+package com.pomWithoutPageFactory;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class HomePage {
+	WebDriver driver;
+	
+	By homePageText = By.xpath("//h6[text()='Dashboard']");
+	
+	BaseTest.
+	// Constructor to initialize the driver
+	public HomePage(WebDriver driver) {
+		this.driver=driver;
+	}
+	// get title is a getter method
+	public String getTitle() {
+		return driver.findElement(homePageText).getText();
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.sauceDemo;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class LoginTest extends BaseTest{
+	WebDriver driver;
+	LoginPage loginPage;
+	
+	@Test
+	public void loginTest() {
+		loginPage = new LoginPage(driver);
+		
+		loginPage.loginAccount("standard_user", "secret_sauce");
+		
+//		Assert.assertTrue(loginPage.getverifyText().contains("Products"));
+	}
+}

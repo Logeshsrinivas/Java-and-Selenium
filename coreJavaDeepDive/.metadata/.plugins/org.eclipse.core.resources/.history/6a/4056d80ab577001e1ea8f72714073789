@@ -1,0 +1,16 @@
+package com.TestNGASSESSMENT.Test.TestNG;
+
+import org.testng.annotations.Test;
+
+public class LoginTest extends BaseTest {
+	
+	LoginPage loginPage;
+	
+	@Test
+	public void LoginTest() {
+		
+		loginPage= new LoginPage(driver);
+		
+	}
+
+}

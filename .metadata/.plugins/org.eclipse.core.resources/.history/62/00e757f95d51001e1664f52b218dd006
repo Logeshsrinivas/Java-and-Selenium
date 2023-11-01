@@ -1,0 +1,24 @@
+package com.assignment1;
+
+public class Vehicle {
+//	Fields
+	private String vehicleModel ;
+	private String vechileBrand;
+	String number = " TN 18 7878";
+	
+//	Constructors
+	
+	public Vehicle() {
+		System.out.println("Vechile's default construtor");
+	}
+	
+	public Vehicle(String vehicleModel, String vechileBrand) {
+		this.vehicleModel=vehicleModel;
+		this.vechileBrand=vechileBrand;
+	}
+//	 Other methods
+	public void display() {
+		System.out.println("vechileBrand : "  + vechileBrand +"\n"
+						   +"vehicleModel : " + vehicleModel );
+	}
+}

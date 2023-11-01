@@ -1,0 +1,17 @@
+package com.pomWithoutPageFactory;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class HomePageTest extends BaseTest {
+	LoginPage objLogin;
+	HomePage homePage;
+	LoginTest objTest;
+	@Test(priority =1)
+	public void HomeTest() {
+		objTest.loginTest();
+		homePage = new HomePage(driver);
+		
+		Assert.assertTrue(homePage.getTitle().contains("Dashboard"));
+	}
+}

@@ -1,0 +1,38 @@
+package com.LogeshFinalTechnicalAssessment;
+
+import java.util.Scanner;
+
+public class AlphaNumeric {	
+    public static boolean isDigit(char c) {   // A method to check if a character is a digit
+        return c >= '0' && c <= '9';
+    }								
+    public static void squareNumbers(String s) { // A method to find and square the numbers in a string
+        String num = "";
+        for (int i = 0; i < s.length(); i++) {
+            char curr = s.charAt(i);
+            if (isDigit(curr)) {              
+                num = curr;
+            } else {                
+                if (!num.isEmpty()) {
+                    int n = Integer.parseInt(num);
+                    int sq = n * n;
+                    System.out.println(n + " -> " + sq);
+                    num = "";
+                }
+            }
+        }
+        if (!num.isEmpty()) {  // Check if the num string is not empty after the loop ends
+            int n = Integer.parseInt(num);
+            int sq = n * n;
+            System.out.println(n + " -> " + sq);
+        }
+    }
+    public static void main(String[] args) {
+       
+        Scanner sc = new Scanner(System.in);       
+        System.out.println("Enter a string:"); 
+        String input = sc.nextLine();        
+        squareNumbers(input);
+    }
+}
+

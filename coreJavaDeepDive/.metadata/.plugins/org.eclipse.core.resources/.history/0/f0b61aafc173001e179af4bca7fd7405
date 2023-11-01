@@ -1,0 +1,13 @@
+package TestNG.com.TestNGDemo;
+
+import org.testng.annotations.DataProvider;
+
+public class DataPov {
+	
+	@DataProvider(name="data1"){
+		public Object[][] datapov(){
+			return new Object[][] {{},{}};
+		}
+	}
+
+

@@ -1,0 +1,26 @@
+package com.LogeshFinalTechnicalAssessment;
+
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class BallonGames {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of ballon Shooted");
+		Fabonicc(sc.nextInt());
+		
+			
+		}
+	public static int Fabonicc(int k) {
+		int sum=0;
+		for (int i = 0; i <k; i++) {
+			sum = sum+i;	
+		}
+			return sum-1;
+			
+		}
+
+	}
+
+

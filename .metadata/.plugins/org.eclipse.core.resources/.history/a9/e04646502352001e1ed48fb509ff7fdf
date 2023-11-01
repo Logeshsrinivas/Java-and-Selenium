@@ -1,0 +1,19 @@
+package com.LogeshOops;
+
+public class ElectronicProduct extends Product {
+	private int warrantyPeriod;
+
+	public ElectronicProduct(int productId, String productName, double price, int warrantyPeriod) {
+		super(productId, productName, price);
+		this.warrantyPeriod = warrantyPeriod;
+	}
+	public int getWarrantyPeriod() {
+		return warrantyPeriod;
+	}
+	public void displayInfo() {
+		System.out.println("Product_ID : " + super.getProductId()+"\n"
+				+ "Product_NAme : " +super.getProductName()+"\n"
+				+ "Price : " + super.getPrice()+"\n"
+				+ "Warranty Period : " + getWarrantyPeriod()+" Months");		
+	}
+}

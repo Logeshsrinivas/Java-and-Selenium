@@ -1,0 +1,35 @@
+package com.LogeshFinalTechnicalAssessment;
+import java.util.*;
+import java.util.stream.Collectors;
+public class Program3 {
+	    public static void main(String[] args) {
+	        List<String> stringList = Arrays.asList("app", "banana", "avocado", "apricot", "cherry");
+	        // Task A: Filter strings that start with 'a' and have exactly 3 letters
+	        List<String> filteredList = stringList.stream()
+	                .filter(s -> s.startsWith("a") && s.length() == 3)
+	                .collect(Collectors.toList());
+	        System.out.println("Task A: " + filteredList);
+	        List<Integer> integerList = Arrays.asList(3, 44);
+	        // Task B: Create a comma-separated string with 'o' for odd and 'e' for even numbers
+	        String result = integerList.stream()
+	                .map(n -> (n % 2 == 0 ? "e" : "o") + n)
+	                .collect(Collectors.joining(","));
+	        System.out.println("Task B: '" + result + "'");
+	        List<Integer> numberList1 = Arrays.asList(10, 30, 15, 20, 50, 5);
+	        List<Integer> numberList2 = Arrays.asList(1, 2, 3);
+	        List<Integer> numberList3 = Arrays.asList(20, 30);
+	        // Task C: Print the largest 3 numbers (or all if less than 3)
+	        printLargestNumbers(numberList1);
+	        printLargestNumbers(numberList2);
+	        printLargestNumbers(numberList3);
+	    }
+	    	public static void printLargestNumbers(List<Integer> numbers) {
+	        List<Integer> sortedList = numbers.stream()
+	                .sorted(Collections.reverseOrder())
+	                .limit(3)
+	                .collect(Collectors.toList());
+	        System.out.println("Task C: " + sortedList);
+	    }
+	}
+
+
